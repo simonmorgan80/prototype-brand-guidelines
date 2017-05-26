@@ -1,0 +1,39 @@
+/*
+ * Component: images
+ */
+
+.team-image-placeholder {
+    border: 1px solid $mid-grey;
+}
+
+.team-image--center {
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+ * Component: image block
+ */
+
+.team-image-block {
+    
+
+    @include respond-to('medium') {
+    
+        @include span-columns(6 of 9);
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }    
+}
+
+.team-image-supporting {
+    
+    @include respond-to('medium') {
+        
+
+        @include span-columns(3 of 9);
+    }
+}

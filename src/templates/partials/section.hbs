@@ -1,0 +1,11 @@
+{{#each this.pages }}
+
+    <section id="section-{{data.section-position}}" class="team-section {{data.section-class}} {{#if data.sub-section}}team-section--sub{{/if}}" data-section-title="{{data.section-title}}" data-section-theme="{{data.section-theme}}">    
+        <div class="team-container">
+
+            {{{this.page}}}
+
+        </div>
+    </section>
+
+{{/each}}

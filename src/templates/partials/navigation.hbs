@@ -1,0 +1,70 @@
+<nav class="team-navigation">
+    <button id="team-navigation_toggle" class="team-navigation_toggle" data-menu-target="team-menu-primary">Menu</button>    
+    
+    <ul id="team-menu-primary" class="team-menu team-menu-primary">
+
+        {{#home}}
+            <li class="team-menu_item has-subnav">
+                <a href="index.html" class="team-menu_item_link" data-section-target="">Brand story</a>
+                <ul class="team-menu team-menu--sub">
+
+                    {{#each this.pages }}
+                        <li class="team-menu_item">
+                            <a href="index.html#section-{{data.section-position}}" class="team-menu_item_link" data-section-target="section-{{data.section-position}}">
+                                {{data.section-title}}
+                            </a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+            </li>
+        {{/home}}
+
+        {{#brand-elements}}
+            <li class="team-menu_item has-subnav">
+                <a href="brand-elements.html" class="team-menu_item_link" data-section-target="">Brand elements</a>
+                <ul class="team-menu team-menu--sub">
+
+                    {{#each this.pages }}
+                        <li class="team-menu_item">
+                            <a href="brand-elements.html#section-{{data.section-position}}" class="team-menu_item_link" data-section-target="section-{{data.section-position}}">
+                                {{data.section-title}}
+                            </a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+            </li>
+        {{/brand-elements}}
+
+        {{#print}}
+            <li class="team-menu_item has-subnav">
+                <a href="print.html" class="team-menu_item_link" data-section-target="">Print</a>
+                <ul class="team-menu team-menu--sub">
+
+                    {{#each this.pages }}
+                        <li class="team-menu_item">
+                            <a href="print.html#section-{{data.section-position}}" class="team-menu_item_link" data-section-target="section-{{data.section-position}}">
+                                {{data.section-title}}
+                            </a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+            </li>
+        {{/print}}
+
+        <!-- Framework specific -->
+        <li class="team-menu_item">
+            <a href="web.html" class="team-menu_item_link">Web</a>
+        </li>
+        <li class="team-menu_item">
+            <a href="guideline-layouts.html" class="team-menu_item_link">Modules</a>
+        </li>
+        <li class="team-menu_item">
+            <a href="guideline-grid.html" class="team-menu_item_link">Grid</a>
+        </li> 
+
+    </ul>
+
+</nav>

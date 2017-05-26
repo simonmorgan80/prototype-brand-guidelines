@@ -1,0 +1,142 @@
+// Navigation
+
+.team-navigation {
+    background: $light-grey;    
+    min-height: 60px;
+    left: 0;
+    padding: 0.5em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+
+    @include respond-to('large') {
+        padding: 0 30px;
+    }
+}
+
+.team-navigation_toggle {
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+.team-menu {
+    list-style: none;    
+    margin: 0;    
+    padding: 0;    
+}
+
+.team-menu-primary {    
+    overflow: hidden;
+    @include transition(max-height 200ms ease-out);
+    @include clearfix;
+        
+
+    .js & {
+        max-height: 0;
+
+        &.is-active {
+            max-height: 40em;
+        }
+    }
+
+    @include respond-to('large') {
+        max-height: 40em;
+        overflow: visible;
+    }
+}
+
+.team-menu_item {
+    position: relative;
+        
+
+    .js & {
+
+        &.has-subnav {
+
+            > a:before {
+                content: '+';
+                line-height: 1;
+                margin-top: -10px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+            } 
+
+            @include respond-to('large') {
+                > a {
+                    padding: 0 em(20) 0 0.5em;
+                }
+            }         
+        }
+
+    }
+
+    &.is-active {
+
+        .team-menu--sub {
+            max-height: 40em;
+        }
+    }
+
+    @include respond-to('large') {
+        float: left;
+        margin-right: em(20);
+
+        .team-menu--sub & {
+            float: none;
+        }
+
+        &:hover {
+    
+            .team-menu--sub {
+                max-height: 40em;
+            }
+        }
+    }
+}
+
+.team-menu_item_link {
+    display: block;
+    padding: 0.5em 0;
+    position: relative;
+
+    @include respond-to('large') {
+        
+        line-height: 60px;
+        padding-bottom: 0;
+        padding-top: 0;
+
+        .team-menu--sub & {
+            line-height: 1.5;
+            padding: 0.5em 0;
+        }
+    } 
+}
+
+.team-menu--sub {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 1em;
+    @include transition(max-height 200ms ease-out);
+        
+
+    &.is-active {
+        max-height: 40em;
+    }
+
+    @include respond-to('large') {
+        background-color: #fff;
+        min-width: 200px;
+        padding: 0 0.5em;
+        position: absolute;
+        @include transition(none);
+        width: 100%;
+
+        .team-menu_item {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/*
+ * sass library
+ */
+/*
+ * Theme: brand name
+ */
+/*
+ * Component: pagination color theme
+ */
+.theme-red a:before,
+.theme-red li:before {
+  border-color: red;
+  -webkit-transition: border-color 200ms ease-out;
+  -moz-transition: border-color 200ms ease-out;
+  transition: border-color 200ms ease-out;
+}
+
+.theme-red :after {
+  background-color: red;
+  -webkit-transition: background-color 200ms ease-out;
+  -moz-transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+}
+
+.theme-red span {
+  color: red;
+  -webkit-transition: color 200ms ease-out;
+  -moz-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}

@@ -1,0 +1,63 @@
+/*
+ * Mixin: Reponsive helper
+ */
+
+@mixin respond-to($name) {
+
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+    
+}
+
+/*
+ * Mixin: background size
+ */
+
+@mixin background-size($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    background-size: $size;
+}
+
+/*
+ * Mixin: font size
+ */
+
+@mixin font-size($size_px) {
+    font-size: $size_px  + px;
+    font-size: rem($size_px);
+}
+
+/*
+ * Mixin: maintain aspect ratio
+ */
+
+@mixin aspect-ratio($width, $height, $innerElement) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .#{$innerElement} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/*
+ * Mixin: mixin name
+ */

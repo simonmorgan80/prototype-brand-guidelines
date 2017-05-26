@@ -1,0 +1,34 @@
+/*
+ * sass library
+ */
+@import 'bourbon';
+
+/*
+ * Theme: brand name
+ */
+
+
+
+
+/*
+ * Component: pagination color theme
+ */
+
+.theme-red {
+
+    a:before,
+    li:before {
+        border-color: red;
+        @include transition(border-color 200ms ease-out);
+    }
+
+    :after {
+        background-color: red;
+        @include transition(background-color 200ms ease-out);
+    }
+
+    span {
+        color: red;
+        @include transition(color 200ms ease-out);
+    }    
+}
